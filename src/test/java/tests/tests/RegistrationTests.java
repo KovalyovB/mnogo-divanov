@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.pages.RegistrationPage;
 
-@DisplayName("Тесты по форме регистрации")
+@DisplayName("[UI] Тесты по форме регистрации")
 public class RegistrationTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
