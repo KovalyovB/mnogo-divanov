@@ -53,7 +53,7 @@
 
 <div align="center">
   <!-- 🖼️ Сюда вставь скриншот сборки Jenkins -->
-  <img src="" alt="Jenkins Build" width="800"/>
+  <img src="src/test/java/images/jenkins_ui.png" alt="Jenkins Build" width="800"/>
 </div>
 
 ### 🎛️ Параметры сборки
