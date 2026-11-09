@@ -4,7 +4,7 @@
 
 <div align="center">
   <!-- 🖼️ Сюда вставь скриншот главной страницы сайта -->
-  <img src="images/divan_main.png" width="25" alt="Много Диванов" width="800"/>
+  <img src="images/divan_main.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
