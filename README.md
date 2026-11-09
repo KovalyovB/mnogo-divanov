@@ -78,17 +78,16 @@
 
 ## 📊 Allure отчет
 
+### 🏠 Основная страница
 <div align="center">
   <img src="src/test/java/images/jenkins_ui.png" alt="Много Диванов" width="800"/>
 </div>
 
-### 🏠 Основная страница
-
-<!-- 🖼️ Сюда вставь скриншот основной страницы Allure отчета -->
-
 ### 🧾 Тест-кейсы
 
-<!-- 🖼️ Сюда вставь скриншот раздела тест-кейсов в Allure отчете -->
+<div align="center">
+  <img src="src/test/java/images/allure_ui_tests.png" alt="Много Диванов" width="800"/>
+</div>
 
 ---
 
