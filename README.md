@@ -3,8 +3,7 @@
 Автоматизированное тестирование интернет-магазина мебели **«Много Диванов»** — [https://www.mnogodivanov.ru/](https://www.mnogodivanov.ru/)
 
 <div align="center">
-  <!-- 🖼️ Сюда вставь скриншот главной страницы сайта -->
-  <img src="images/divan_main.png" alt="Много Диванов" width="800"/>
+  <img src="src/test/java/images/divan_main.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
