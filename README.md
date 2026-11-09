@@ -68,14 +68,14 @@
 
 ## 💻 Команды для запуска в терминале
 
-<!-- ⌨️ Укажи здесь команды запуска, например:
-
-```bash
-./gradlew test
-./gradlew test -Dtags=smoke
-./gradlew clean test -Dbrowser=chrome
+Удалённый запуск в Selenoid (конфигурация по умолчанию):
+```bash  
+./gradlew clean test
 ```
--->
+Локальный запуск в своём браузере:
+```bash
+./gradlew clean test -Dremote= -Dheadless=false
+```
 
 ---
 
