@@ -94,13 +94,17 @@
 
 ## 🧪 Интеграция Allure TestOps
 
-### 📈 Дашборд
+### 🤖 Авто-тесты
 
-<!-- 🖼️ Сюда вставь скриншот дашборда Allure TestOps -->
+<div align="center">
+  <img src="src/test/java/images/testOps_auto.png" alt="Много Диванов" width="800"/>
+</div>
 
-### 🤖 Ручные и авто-тесты
+### 👨‍🔧 Ручные тесты
 
-<!-- 🖼️ Сюда вставь скриншот раздела с ручными и автоматизированными тестами -->
+<div align="center">
+  <img src="src/test/java/images/testOps_manual.png" alt="Много Диванов" width="800"/>
+</div>
 
 ---
 
