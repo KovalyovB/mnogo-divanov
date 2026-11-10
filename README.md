@@ -131,7 +131,7 @@
 В Allure отчете доступна видеозапись прохождения каждого теста, запущенного в Selenoid — это позволяет детально разобрать шаги выполнения и локализовать причину падения. 🎬
 
 <p align="center">
-<img title="Selenoid Video" src="images/screen/gif/registration_gif.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="src/test/java/images/registration_gif.gif" width="550" height="350"  alt="video">   
 </p>
 
 ---
