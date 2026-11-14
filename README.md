@@ -3,7 +3,7 @@
 Автоматизированное тестирование интернет-магазина мебели [«Много Диванов»](https://www.mnogodivanov.ru/)
 
 <div align="center">
-  <img src="src/test/java/images/divan_main.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/divan_main.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
@@ -13,7 +13,7 @@
 - [🛠️ Технологии и инструменты](#️-технологии-и-инструменты)
 - [✅ Примеры автоматизированных тест-кейсов](#-примеры-автоматизированных-тест-кейсов)
 - [⚙️ Сборка Jenkins](#️-сборка-jenkins)
-- [💻 Команды для запуска в терминале](#-команды-для-запуска-в-терминале)
+- [💻 Запуск автотестов](#-запуск-автотестов)
 - [📊 Allure отчет](#-allure-отчет)
 - [🧪 Интеграция Allure TestOps](#-интеграция-allure-testops)
 - [🔗 Интеграция с Jira](#-интеграция-с-jira)
@@ -52,7 +52,7 @@
 
 <div align="center">
   <!-- 🖼️ Сюда вставь скриншот сборки Jenkins -->
-  <img src="src/test/java/images/jenkins_ui.png" alt="Jenkins Build" width="800"/>
+  <img src="docs/images/jenkins_ui.png" alt="Jenkins Build" width="800"/>
 </div>
 
 ### 🎛️ Параметры сборки
@@ -88,13 +88,13 @@
 
 ### 🏠 Основная страница
 <div align="center">
-  <img src="src/test/java/images/jenkins_ui.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/jenkins_ui.png" alt="Много Диванов" width="800"/>
 </div>
 
 ### 🧾 Тест-кейсы
 
 <div align="center">
-  <img src="src/test/java/images/allure_ui_tests.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/allure_ui_tests.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
@@ -104,13 +104,13 @@
 ### 🤖 Авто-тесты
 
 <div align="center">
-  <img src="src/test/java/images/testOps_auto.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/testOps_auto.png" alt="Много Диванов" width="800"/>
 </div>
 
 ### 👨‍🔧 Ручные тесты
 
 <div align="center">
-  <img src="src/test/java/images/testOps_manual.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/testOps_manual.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
@@ -120,7 +120,7 @@
 Результаты автопрогонов автоматически отображаются прямо в задаче Jira — статус тестов, ссылки на Allure отчет и подробная информация о прохождении. 🚀
 
 <div align="center">
-  <img src="src/test/java/images/jira_ui.png" alt="Много Диванов" width="800"/>
+  <img src="docs/images/jira_ui.png" alt="Много Диванов" width="800"/>
 </div>
 
 ---
@@ -130,7 +130,7 @@
 По итогам каждого прогона в Telegram-бот отправляется отчет со статистикой прохождения тестов. 📬
 
 <div align="center">
-  <img src="src/test/java/images/Screenshot_4.png" alt="Много Диванов" width="300"/>
+  <img src="docs/images/Screenshot_4.png" alt="Много Диванов" width="300"/>
 </div>
 
 ---
@@ -140,7 +140,7 @@
 В Allure отчете доступна видеозапись прохождения каждого теста, запущенного в Selenoid — это позволяет детально разобрать шаги выполнения и локализовать причину падения. 🎬
 
 <p align="center">
-<img title="Selenoid Video" src="src/test/java/images/registration_gif.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="docs/images/registration_gif.gif" width="550" height="350"  alt="video">   
 </p>
 
 ---
