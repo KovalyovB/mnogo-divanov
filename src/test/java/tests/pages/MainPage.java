@@ -29,7 +29,7 @@ public class MainPage {
 
     @Step("Открытие главной страницы")
     public MainPage openMainPage() {
-        open("https://www.mnogodivanov.ru/");
+        open("");
 
         return this;
     }

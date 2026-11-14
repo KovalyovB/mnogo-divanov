@@ -36,9 +36,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
     ignoreFailures = true
-    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {

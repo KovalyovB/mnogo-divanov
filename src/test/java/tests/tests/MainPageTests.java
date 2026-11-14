@@ -8,7 +8,7 @@ import tests.test_data.TestData;
 import java.util.Map;
 
 @DisplayName("[UI] Тесты главной страницы сайта")
-public class MainPageTests {
+public class MainPageTests extends TestBase {
     MainPage mainPage = new MainPage();
 
     @Test

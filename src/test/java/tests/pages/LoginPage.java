@@ -27,7 +27,7 @@ public class LoginPage {
 
     @Step("Открытие страницы авторизации")
     public LoginPage openLoginPage() {
-        open("https://www.mnogodivanov.ru/login/");
+        open("/login/");
 
         return this;
     }
