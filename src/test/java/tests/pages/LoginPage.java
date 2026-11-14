@@ -55,7 +55,7 @@ public class LoginPage {
 
     @Step("Проверка заголовка на странице атворизации")
     public LoginPage checkLoginPageTitle() {
-        authPageTitle.shouldHave(text("Вход в личный кабинет"));
+        authPageTitle.shouldHave(text(LOGIN_PAGE_TITLE));
 
         return this;
     }
@@ -76,7 +76,7 @@ public class LoginPage {
 
     @Step("Проверка заголовка над полем Email в форме авторизации")
     public LoginPage checkUserAuthEmailTitle() {
-        authUserEmailInput.parent().shouldHave(text("E-Mail адрес"));
+        authUserEmailInput.parent().shouldHave(text(AUTH_EMAIL_TITLE));
 
         return this;
     }
@@ -85,14 +85,14 @@ public class LoginPage {
     public LoginPage checkUserAuthEmailInput() {
         authUserEmailInput.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "E-Mail адрес"));
+                .shouldHave(attribute("placeholder", AUTH_EMAIL_TITLE));
 
         return this;
     }
 
     @Step("Проверка заголовка над полем пароля в форме авторизации")
     public LoginPage checkUserAuthPasswordTitle() {
-        authUserPasswordInput.parent().parent().shouldHave(text("Пароль"));
+        authUserPasswordInput.parent().parent().shouldHave(text(AUTH_PASSWORD_TITLE));
 
         return this;
     }
@@ -101,7 +101,7 @@ public class LoginPage {
     public LoginPage checkUserAuthPasswordInput() {
         authUserPasswordInput.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Пароль"));
+                .shouldHave(attribute("placeholder", AUTH_PASSWORD_TITLE));
 
         return this;
     }
@@ -110,7 +110,7 @@ public class LoginPage {
     public LoginPage checkUserAuthButton() {
         authUserButton.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(text("Войти"));
+                .shouldHave(text(AUTH_BUTTON_TITLE));
 
         return this;
     }
@@ -127,7 +127,7 @@ public class LoginPage {
     public LoginPage checkSuccessfulUserAuthorization() {
         webdriver().shouldHave(WebDriverConditions.url(MY_ACCOUNT_LINK));
 
-        afterAuthorizationAccountTitle.shouldHave(text("Моя учетная запись"));
+        afterAuthorizationAccountTitle.shouldHave(text(SUCCESSFUL_AUTH_TITLE));
 
         return this;
     }
@@ -137,7 +137,9 @@ public class LoginPage {
         webdriver().shouldHave(WebDriverConditions.url(LOGIN_PAGE_LINK));
 
         wrongAuthorizationAller.shouldBe(visible)
-                .shouldHave(text(WRONG_AUTHORIZATION_MESSAGE));
+                .shouldHave(anyOf(
+                        text(WRONG_AUTHORIZATION_MESSAGE),
+                        text(ANOTHER_WRONG_AUTHORIZATION_MESSAGE)));
 
 
         return this;

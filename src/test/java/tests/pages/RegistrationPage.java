@@ -117,35 +117,35 @@ public class RegistrationPage {
 
     @Step("Проверка валидации и текста ошибки при регистрации без имени пользователя")
     public RegistrationPage checkValidationWithEmptyFirstName() {
-        validationFirstNameErrorMessage.parent().parent().shouldHave(text("Имя"));
+        validationFirstNameErrorMessage.parent().parent().shouldHave(text(REGISTRATION_FIRST_NAME_TITLE));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без фамилии пользователя")
     public RegistrationPage checkValidationWithEmptyLastName() {
-        validationLastNameErrorMessage.parent().parent().shouldHave(text("Фамилия"));
+        validationLastNameErrorMessage.parent().parent().shouldHave(text(REGISTRATION_LAST_NAME_TITLE));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без номера телефона")
     public RegistrationPage checkValidationWithEmptyPhoneNumber() {
-        validationPhoneNumberErrorMessage.parent().parent().shouldHave(text("Телефон"));
+        validationPhoneNumberErrorMessage.parent().parent().shouldHave(text(REGISTRATION_PHONE_NUMBER_TITLE));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без Email")
     public RegistrationPage checkValidationWithEmptyEmail() {
-        validationEmailErrorMessage.parent().parent().shouldHave(text("E-Mail"));
+        validationEmailErrorMessage.parent().parent().shouldHave(text(REGISTRATION_EMAIL_TITLE));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без пароля")
     public RegistrationPage checkValidationWithEmptyPassword() {
-        validationPasswordErrorMessage.parent().parent().shouldHave(text("Пароль"));
+        validationPasswordErrorMessage.parent().parent().shouldHave(text(REGISTRATION_PASSWORD_TITLE));
 
         return this;
     }
@@ -155,7 +155,7 @@ public class RegistrationPage {
         firstNameInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Имя"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_FIRST_NAME_TITLE));
 
         return this;
     }
@@ -165,7 +165,7 @@ public class RegistrationPage {
         lastNameInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Фамилия"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_LAST_NAME_TITLE));
 
         return this;
     }
@@ -175,7 +175,7 @@ public class RegistrationPage {
         mobilePhoneInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Телефон"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_PHONE_NUMBER_TITLE));
 
         return this;
     }
@@ -185,7 +185,7 @@ public class RegistrationPage {
         userEmailInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "E-Mail"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_EMAIL_TITLE));
 
         return this;
     }
@@ -195,7 +195,7 @@ public class RegistrationPage {
         passwordInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Пароль"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_PASSWORD_TITLE));
 
         return this;
     }
@@ -205,7 +205,7 @@ public class RegistrationPage {
         confirmPasswordInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", "Подтвердите пароль"));
+                .shouldHave(attribute("placeholder", PLACEHOLDER_PASSWORD_CONFIRM_TITLE));
 
         return this;
     }
@@ -215,7 +215,7 @@ public class RegistrationPage {
         EmailLetterYesRadioButton
                 .shouldBe(visible, checked)
                 .parent()
-                .shouldHave(text("Да"));
+                .shouldHave(text(YES_RADIO_BUTTON_TITLE));
 
         return this;
     }
@@ -225,14 +225,14 @@ public class RegistrationPage {
         EmailLetterNoRadioButton
                 .shouldBe(visible, not(checked))
                 .parent()
-                .shouldHave(text("Нет"));
+                .shouldHave(text(NO_RADIO_BUTTON_TITLE));
 
         return this;
     }
 
     @Step("Проверка наименования блока с радиокнопками по получению новостепй на почту")
     public RegistrationPage checkEmailLetterRadioButtonTitle() {
-        EmailLetterRadioButtonTitle.shouldBe(visible).shouldHave(text("Получать новости на E-Mail"));
+        EmailLetterRadioButtonTitle.shouldBe(visible).shouldHave(text(CONFIRM_LETTER_BUTTON_TITLE));
 
         return this;
     }
@@ -243,7 +243,7 @@ public class RegistrationPage {
                 .shouldBe(visible)
                 .shouldNotBe(checked)
                 .parent()
-                .shouldHave(text("Я прочитал(а) и согласен(на) с условиями "));
+                .shouldHave(text(CONFIRM_POLICY_CHECKBOX_TITLE));
 
         return this;
     }
@@ -252,7 +252,7 @@ public class RegistrationPage {
     public RegistrationPage checkPrivacyPolicyLink() {
         privacyPolicyLink
                 .shouldBe(visible)
-                .shouldHave(text("Политика конфиденциальности"))
+                .shouldHave(text(POLICY_LINK_TITLE))
                 .shouldHave(attribute("href", PRIVACY_POLICY_LINK));
 
         return this;
@@ -261,7 +261,7 @@ public class RegistrationPage {
     @Step("Проверка заголовка страницы регистрации")
     public RegistrationPage checkRegistrationPageHeader() {
         registrationPageHeader
-                .shouldHave(text("Регистрация"));
+                .shouldHave(text(REGISTRATION_PAGE_HEADER));
 
         return this;
     }

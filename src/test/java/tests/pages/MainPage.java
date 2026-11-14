@@ -65,7 +65,7 @@ public class MainPage {
 
     @Step("Деавторизация пользователя")
     public MainPage userLogout() {
-        accountMenu.find(byText("Выход")).click();
+        accountMenu.find(byText(LOGOUT_BUTTON_TITLE)).click();
 
         return this;
     }
@@ -79,7 +79,7 @@ public class MainPage {
 
     @Step("Проверка наличия кнопки 'Войти в кабинет' в меню личного кабинета")
     public MainPage checkSignInButton() {
-        accountMenu.$(byText("Войти в кабинет"))
+        accountMenu.$(byText(LOGIN_BUTTON_TITLE))
                 .shouldHave(attribute("href", SIGN_IN_LINK))
                 .shouldBe(visible)
                 .shouldBe(clickable);
@@ -89,7 +89,7 @@ public class MainPage {
 
     @Step("Проверка наличия кнопки 'Создать аккаунт' в меню личного кабинета")
     public MainPage checkCreateAccountButton() {
-        accountMenu.$(byText("Создать аккаунт"))
+        accountMenu.$(byText(CREATE_USER_BUTTON_TITLE))
                 .shouldHave(attribute("href", CREATE_ACCOUNT_LINK))
                 .shouldBe(visible)
                 .shouldBe(clickable);
@@ -99,7 +99,7 @@ public class MainPage {
 
     @Step("Проверка наличия кнопки 'Мои заказы' в меню личного кабинета")
     public MainPage checkMyOrdersButton() {
-        accountMenu.$(byText("Мои заказы"))
+        accountMenu.$(byText(USER_ORDERS_BUTTON_TITLE))
                 .shouldHave(attribute("href", MY_ORDERS_LINK))
                 .shouldBe(visible)
                 .shouldBe(clickable);
@@ -109,7 +109,7 @@ public class MainPage {
 
     @Step("Проверка наличия кнопки 'Избранное' в меню личного кабинета")
     public MainPage checkWishListButton() {
-        accountMenu.$(byText("Избранное"))
+        accountMenu.$(byText(WISH_LIST_BUTTON_TITLE))
                 .shouldHave(attribute("href", WISH_LIST_LINK))
                 .shouldBe(visible)
                 .shouldBe(clickable);
@@ -119,7 +119,7 @@ public class MainPage {
 
     @Step("Проверка наличия кнопки 'Восстановить пароль' в меню личного кабинета")
     public MainPage checkForgotPasswordButton() {
-        accountMenu.$(byText("Восстановить пароль"))
+        accountMenu.$(byText(FORGOT_PASSWORD_BUTTON_TITLE))
                 .shouldHave(attribute("href", FORGOT_PASSWORD_LINK))
                 .shouldBe(visible)
                 .shouldBe(clickable);
@@ -139,7 +139,7 @@ public class MainPage {
     public MainPage checkHeaderCatalogButton() {
         headerCatalogButton.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(text("Каталог"));
+                .shouldHave(text(CATALOG_BUTTON_TITLE));
 
         return this;
     }
