@@ -48,7 +48,7 @@
 
 ---
 
-## ⚙️ Сборка Jenkins
+## ⚙️ Сборка [Jenkins](https://jenkins.qa.guru/view/java_students/job/42_kovalyov_final_ui_tests/)
 
 <div align="center">
   <!-- 🖼️ Сюда вставь скриншот сборки Jenkins -->
@@ -84,7 +84,7 @@
 
 ---
 
-## 📊 Allure отчет
+## 📊 [Allure](https://jenkins.qa.guru/view/java_students/job/42_kovalyov_final_ui_tests/3/allure/) отчет
 
 ### 🏠 Основная страница
 <div align="center">
@@ -99,7 +99,7 @@
 
 ---
 
-## 🧪 Интеграция Allure TestOps
+## 🧪 Интеграция [Allure TestOps](https://allure.qa.guru/project/5429/test-cases?treeId=0)
 
 ### 🤖 Авто-тесты
 
@@ -115,7 +115,7 @@
 
 ---
 
-## 🔗 Интеграция с Jira
+## 🔗 Интеграция с [Jira](https://jira.qa.guru/browse/MUL-72)
 
 Результаты автопрогонов автоматически отображаются прямо в задаче Jira — статус тестов, ссылки на Allure отчет и подробная информация о прохождении. 🚀
 
