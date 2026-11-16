@@ -7,7 +7,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static tests.test_data.TestData.*;
 
 public class LoginPage {
 
@@ -33,15 +32,15 @@ public class LoginPage {
     }
 
     @Step("Ввод пользовательского Email на форму авторизации")
-    public LoginPage typeUserEmail(String email) {
-        authUserEmailInput.setValue(email);
+    public LoginPage typeUserEmail(String value) {
+        authUserEmailInput.setValue(value);
 
         return this;
     }
 
     @Step("Ввод пользовательского пароля на форму авторизации")
-    public LoginPage typeUserPassword(String password) {
-        authUserPasswordInput.setValue(password);
+    public LoginPage typeUserPassword(String value) {
+        authUserPasswordInput.setValue(value);
 
         return this;
     }
@@ -54,8 +53,8 @@ public class LoginPage {
     }
 
     @Step("Проверка заголовка на странице атворизации")
-    public LoginPage checkLoginPageTitle() {
-        authPageTitle.shouldHave(text(LOGIN_PAGE_TITLE));
+    public LoginPage checkLoginPageTitle(String value) {
+        authPageTitle.shouldHave(text(value));
 
         return this;
     }
@@ -75,71 +74,71 @@ public class LoginPage {
     }
 
     @Step("Проверка заголовка над полем Email в форме авторизации")
-    public LoginPage checkUserAuthEmailTitle() {
-        authUserEmailInput.parent().shouldHave(text(AUTH_EMAIL_TITLE));
+    public LoginPage checkUserAuthEmailTitle(String value) {
+        authUserEmailInput.parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка поля ввода Email в форме авторизации")
-    public LoginPage checkUserAuthEmailInput() {
+    public LoginPage checkUserAuthEmailInput(String value) {
         authUserEmailInput.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", AUTH_EMAIL_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка заголовка над полем пароля в форме авторизации")
-    public LoginPage checkUserAuthPasswordTitle() {
-        authUserPasswordInput.parent().parent().shouldHave(text(AUTH_PASSWORD_TITLE));
+    public LoginPage checkUserAuthPasswordTitle(String value) {
+        authUserPasswordInput.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка поля ввода пароля в форме авторизации")
-    public LoginPage checkUserAuthPasswordInput() {
+    public LoginPage checkUserAuthPasswordInput(String value) {
         authUserPasswordInput.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", AUTH_PASSWORD_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка кнопки авторизации")
-    public LoginPage checkUserAuthButton() {
+    public LoginPage checkUserAuthButton(String value) {
         authUserButton.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(text(AUTH_BUTTON_TITLE));
+                .shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка кнопки авторизации")
-    public LoginPage checkCaptureForNewUser() {
+    public LoginPage checkCaptureForNewUser(String value) {
         newUserCaptureMessage.shouldBe(visible)
-                .shouldHave(text(NEW_USER_CAPTURE_MESSAGE));
+                .shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка успешности авторизации")
-    public LoginPage checkSuccessfulUserAuthorization() {
-        webdriver().shouldHave(WebDriverConditions.url(MY_ACCOUNT_LINK));
+    public LoginPage checkSuccessfulUserAuthorization(String accountLink, String authTitle) {
+        webdriver().shouldHave(WebDriverConditions.url(accountLink));
 
-        afterAuthorizationAccountTitle.shouldHave(text(SUCCESSFUL_AUTH_TITLE));
+        afterAuthorizationAccountTitle.shouldHave(text(authTitle));
 
         return this;
     }
 
     @Step("Проверка ошибки при авторизации с не валидными данынми")
-    public LoginPage checkWrongUserAuthorization() {
-        webdriver().shouldHave(WebDriverConditions.url(LOGIN_PAGE_LINK));
+    public LoginPage checkWrongUserAuthorization(String pageLink, String wrongAuthMessage, String wrongAuth2Message) {
+        webdriver().shouldHave(WebDriverConditions.url(pageLink));
 
         wrongAuthorizationAller.shouldBe(visible)
                 .shouldHave(anyOf(
-                        text(WRONG_AUTHORIZATION_MESSAGE),
-                        text(ANOTHER_WRONG_AUTHORIZATION_MESSAGE)));
+                        text(wrongAuthMessage),
+                        text(wrongAuth2Message)));
 
 
         return this;

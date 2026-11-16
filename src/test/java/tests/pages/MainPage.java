@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static tests.test_data.TestData.*;
 
 public class MainPage {
 
@@ -64,8 +63,8 @@ public class MainPage {
     }
 
     @Step("Деавторизация пользователя")
-    public MainPage userLogout() {
-        accountMenu.find(byText(LOGOUT_BUTTON_TITLE)).click();
+    public MainPage userLogout(String value) {
+        accountMenu.find(byText(value)).click();
 
         return this;
     }
@@ -78,9 +77,9 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки 'Войти в кабинет' в меню личного кабинета")
-    public MainPage checkSignInButton() {
-        accountMenu.$(byText(LOGIN_BUTTON_TITLE))
-                .shouldHave(attribute("href", SIGN_IN_LINK))
+    public MainPage checkSignInButton(String loginButtonTitle , String signLink) {
+        accountMenu.$(byText(loginButtonTitle))
+                .shouldHave(attribute("href", signLink))
                 .shouldBe(visible)
                 .shouldBe(clickable);
 
@@ -88,9 +87,9 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки 'Создать аккаунт' в меню личного кабинета")
-    public MainPage checkCreateAccountButton() {
-        accountMenu.$(byText(CREATE_USER_BUTTON_TITLE))
-                .shouldHave(attribute("href", CREATE_ACCOUNT_LINK))
+    public MainPage checkCreateAccountButton(String createUserButtonTitle, String accountLink) {
+        accountMenu.$(byText(createUserButtonTitle))
+                .shouldHave(attribute("href", accountLink))
                 .shouldBe(visible)
                 .shouldBe(clickable);
 
@@ -98,9 +97,9 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки 'Мои заказы' в меню личного кабинета")
-    public MainPage checkMyOrdersButton() {
-        accountMenu.$(byText(USER_ORDERS_BUTTON_TITLE))
-                .shouldHave(attribute("href", MY_ORDERS_LINK))
+    public MainPage checkMyOrdersButton(String orderButtonTitle,String orderLink) {
+        accountMenu.$(byText(orderButtonTitle))
+                .shouldHave(attribute("href", orderLink))
                 .shouldBe(visible)
                 .shouldBe(clickable);
 
@@ -108,9 +107,9 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки 'Избранное' в меню личного кабинета")
-    public MainPage checkWishListButton() {
-        accountMenu.$(byText(WISH_LIST_BUTTON_TITLE))
-                .shouldHave(attribute("href", WISH_LIST_LINK))
+    public MainPage checkWishListButton(String wishListButtonTitle,String wishListLint) {
+        accountMenu.$(byText(wishListButtonTitle))
+                .shouldHave(attribute("href", wishListLint))
                 .shouldBe(visible)
                 .shouldBe(clickable);
 
@@ -118,9 +117,9 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки 'Восстановить пароль' в меню личного кабинета")
-    public MainPage checkForgotPasswordButton() {
-        accountMenu.$(byText(FORGOT_PASSWORD_BUTTON_TITLE))
-                .shouldHave(attribute("href", FORGOT_PASSWORD_LINK))
+    public MainPage checkForgotPasswordButton(String forgotPassButtonTitle, String forgotPassLink) {
+        accountMenu.$(byText(forgotPassButtonTitle))
+                .shouldHave(attribute("href", forgotPassLink))
                 .shouldBe(visible)
                 .shouldBe(clickable);
 
@@ -136,10 +135,10 @@ public class MainPage {
     }
 
     @Step("Проверка наличия кнопки каталога  в header")
-    public MainPage checkHeaderCatalogButton() {
+    public MainPage checkHeaderCatalogButton(String catalogButtonTitle) {
         headerCatalogButton.shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(text(CATALOG_BUTTON_TITLE));
+                .shouldHave(text(catalogButtonTitle));
 
         return this;
     }

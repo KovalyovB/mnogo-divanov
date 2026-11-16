@@ -6,6 +6,8 @@ import tests.pages.LoginPage;
 import tests.pages.MainPage;
 import tests.pages.RegistrationPage;
 
+import static tests.test_data.TestData.*;
+
 @DisplayName("[UI] Тесты страницы авторизации")
 public class LoginPageTests extends TestBase {
     LoginPage loginPage = new LoginPage();
@@ -16,7 +18,7 @@ public class LoginPageTests extends TestBase {
     @DisplayName("[UI] Проверка корректной загрузки формы авторизации")
     public void loginFormLoadedTest() {
         loginPage.openLoginPage()
-                .checkLoginPageTitle()
+                .checkLoginPageTitle(LOGIN_PAGE_TITLE)
                 .checkAuthUserFormLoaded()
                 .checkCreateUserFormLoaded();
 
@@ -26,12 +28,12 @@ public class LoginPageTests extends TestBase {
     @DisplayName("[UI] Проверка состава формы авторизации")
     public void authBlockContentTest() {
         loginPage.openLoginPage()
-                .checkUserAuthEmailTitle()
-                .checkUserAuthEmailInput()
-                .checkUserAuthPasswordTitle()
-                .checkUserAuthPasswordInput()
-                .checkUserAuthButton()
-                .checkCaptureForNewUser();
+                .checkUserAuthEmailTitle(AUTH_EMAIL_TITLE)
+                .checkUserAuthEmailInput(AUTH_EMAIL_TITLE)
+                .checkUserAuthPasswordTitle(AUTH_PASSWORD_TITLE)
+                .checkUserAuthPasswordInput(AUTH_PASSWORD_TITLE)
+                .checkUserAuthButton(AUTH_BUTTON_TITLE)
+                .checkCaptureForNewUser(NEW_USER_CAPTURE_MESSAGE);
     }
 
     @Test
@@ -49,13 +51,13 @@ public class LoginPageTests extends TestBase {
                 .submitRegistration();
 
         mainPage.clickAccountButton()
-                .userLogout();
+                .userLogout(LOGOUT_BUTTON_TITLE);
 
         loginPage.openLoginPage()
                 .typeUserEmail(userEmail)
                 .typeUserPassword(userPassword)
                 .submitAuthorization()
-                .checkSuccessfulUserAuthorization();
+                .checkSuccessfulUserAuthorization(MY_ACCOUNT_LINK, SUCCESSFUL_AUTH_TITLE);
     }
 
     @Test
@@ -66,7 +68,7 @@ public class LoginPageTests extends TestBase {
                 .typeUserEmail(wrongUserEmail)
                 .typeUserPassword(wrongUserPassword)
                 .submitAuthorization()
-                .checkWrongUserAuthorization();
+                .checkWrongUserAuthorization(LOGIN_PAGE_LINK, WRONG_AUTHORIZATION_MESSAGE, ANOTHER_WRONG_AUTHORIZATION_MESSAGE);
 
     }
 }

@@ -7,6 +7,8 @@ import tests.test_data.TestData;
 
 import java.util.Map;
 
+import static tests.test_data.TestData.*;
+
 @DisplayName("[UI] Тесты главной страницы сайта")
 public class MainPageTests extends TestBase {
     MainPage mainPage = new MainPage();
@@ -28,11 +30,11 @@ public class MainPageTests extends TestBase {
         mainPage.openMainPage()
                 .clickAccountButton()
                 .checkAccountMenuIsOpened()
-                .checkSignInButton()
-                .checkCreateAccountButton()
-                .checkMyOrdersButton()
-                .checkWishListButton()
-                .checkForgotPasswordButton();
+                .checkSignInButton(LOGIN_BUTTON_TITLE, SIGN_IN_LINK)
+                .checkCreateAccountButton(CREATE_USER_BUTTON_TITLE, CREATE_ACCOUNT_LINK)
+                .checkMyOrdersButton(USER_ORDERS_BUTTON_TITLE, MY_ORDERS_LINK)
+                .checkWishListButton(WISH_LIST_BUTTON_TITLE, WISH_LIST_LINK)
+                .checkForgotPasswordButton(FORGOT_PASSWORD_BUTTON_TITLE, FORGOT_PASSWORD_LINK);
     }
 
     @Test
@@ -40,7 +42,7 @@ public class MainPageTests extends TestBase {
     public void headerTest() {
         mainPage.openMainPage()
                 .checkHeaderLogo()
-                .checkHeaderCatalogButton()
+                .checkHeaderCatalogButton(CATALOG_BUTTON_TITLE)
                 .checkHeaderSearchForm()
                 .checkHeaderWishListButton()
                 .checkHeaderCompareButton()

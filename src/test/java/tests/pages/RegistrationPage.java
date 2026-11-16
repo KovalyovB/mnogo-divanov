@@ -102,166 +102,166 @@ public class RegistrationPage {
     }
 
     @Step("Проверка заголовка после успешной регистрации")
-    public RegistrationPage checkSuccessfulRegistrationHeader() {
-        successfulRegistrationHeader.shouldHave(text(SUCCESSFUL_REGISTRATION_HEADER));
+    public RegistrationPage checkSuccessfulRegistrationHeader(String value) {
+        successfulRegistrationHeader.shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка ошибки при регистрации без согласия на политику конфиденциальности")
-    public RegistrationPage checkWrongConfirmationAlert() {
-        wrongConfirmationPolicyAlert.shouldHave(text(WRONG_CONFIRMATION_ALERT_MESSAGE));
+    public RegistrationPage checkWrongConfirmationAlert(String value) {
+        wrongConfirmationPolicyAlert.shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без имени пользователя")
-    public RegistrationPage checkValidationWithEmptyFirstName() {
-        validationFirstNameErrorMessage.parent().parent().shouldHave(text(REGISTRATION_FIRST_NAME_TITLE));
+    public RegistrationPage checkValidationWithEmptyFirstName(String value) {
+        validationFirstNameErrorMessage.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без фамилии пользователя")
-    public RegistrationPage checkValidationWithEmptyLastName() {
-        validationLastNameErrorMessage.parent().parent().shouldHave(text(REGISTRATION_LAST_NAME_TITLE));
+    public RegistrationPage checkValidationWithEmptyLastName(String value) {
+        validationLastNameErrorMessage.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без номера телефона")
-    public RegistrationPage checkValidationWithEmptyPhoneNumber() {
-        validationPhoneNumberErrorMessage.parent().parent().shouldHave(text(REGISTRATION_PHONE_NUMBER_TITLE));
+    public RegistrationPage checkValidationWithEmptyPhoneNumber(String value) {
+        validationPhoneNumberErrorMessage.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без Email")
-    public RegistrationPage checkValidationWithEmptyEmail() {
-        validationEmailErrorMessage.parent().parent().shouldHave(text(REGISTRATION_EMAIL_TITLE));
+    public RegistrationPage checkValidationWithEmptyEmail(String value) {
+        validationEmailErrorMessage.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка валидации и текста ошибки при регистрации без пароля")
-    public RegistrationPage checkValidationWithEmptyPassword() {
-        validationPasswordErrorMessage.parent().parent().shouldHave(text(REGISTRATION_PASSWORD_TITLE));
+    public RegistrationPage checkValidationWithEmptyPassword(String value) {
+        validationPasswordErrorMessage.parent().parent().shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля ввода имени пользователя")
-    public RegistrationPage checkUserFirstNameInputField() {
+    public RegistrationPage checkUserFirstNameInputField(String value) {
         firstNameInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_FIRST_NAME_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля ввода фамилии пользователя")
-    public RegistrationPage checkUserLastNameInputField() {
+    public RegistrationPage checkUserLastNameInputField(String value) {
         lastNameInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_LAST_NAME_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля ввода телефона пользователя")
-    public RegistrationPage checkUserPhoneNumberInputField() {
+    public RegistrationPage checkUserPhoneNumberInputField(String value) {
         mobilePhoneInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_PHONE_NUMBER_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля ввода Email пользователя")
-    public RegistrationPage checkUserEmailInputField() {
+    public RegistrationPage checkUserEmailInputField(String value) {
         userEmailInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_EMAIL_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля ввода пароля пользователя")
-    public RegistrationPage checkUserPasswordInputField() {
+    public RegistrationPage checkUserPasswordInputField(String value) {
         passwordInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_PASSWORD_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка наличия и корректности поля подтверждения пароля")
-    public RegistrationPage checkUserConfirmPasswordInputField() {
+    public RegistrationPage checkUserConfirmPasswordInputField(String value) {
         confirmPasswordInput
                 .shouldBe(visible)
                 .shouldBe(clickable)
-                .shouldHave(attribute("placeholder", PLACEHOLDER_PASSWORD_CONFIRM_TITLE));
+                .shouldHave(attribute("placeholder", value));
 
         return this;
     }
 
     @Step("Проверка радиокнопки для получения новостей на почту (Да)")
-    public RegistrationPage checkEmailLetterYesRadioButton() {
+    public RegistrationPage checkEmailLetterYesRadioButton(String value) {
         EmailLetterYesRadioButton
                 .shouldBe(visible, checked)
                 .parent()
-                .shouldHave(text(YES_RADIO_BUTTON_TITLE));
+                .shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка радиокнопки для получения новостей на почту (Нет)")
-    public RegistrationPage checkEmailLetterNoRadioButton() {
+    public RegistrationPage checkEmailLetterNoRadioButton(String value) {
         EmailLetterNoRadioButton
                 .shouldBe(visible, not(checked))
                 .parent()
-                .shouldHave(text(NO_RADIO_BUTTON_TITLE));
+                .shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка наименования блока с радиокнопками по получению новостепй на почту")
-    public RegistrationPage checkEmailLetterRadioButtonTitle() {
-        EmailLetterRadioButtonTitle.shouldBe(visible).shouldHave(text(CONFIRM_LETTER_BUTTON_TITLE));
+    public RegistrationPage checkEmailLetterRadioButtonTitle(String value) {
+        EmailLetterRadioButtonTitle.shouldBe(visible).shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка блока с чекбоксом по согласию на политику конфиденциальности")
-    public RegistrationPage checkPrivacyPolicyCheckboxBlock() {
+    public RegistrationPage checkPrivacyPolicyCheckboxBlock(String value) {
         privacyPolicyCheckbox
                 .shouldBe(visible)
                 .shouldNotBe(checked)
                 .parent()
-                .shouldHave(text(CONFIRM_POLICY_CHECKBOX_TITLE));
+                .shouldHave(text(value));
 
         return this;
     }
 
     @Step("Проверка наличия гиперссылки  на политику конфиденциальности")
-    public RegistrationPage checkPrivacyPolicyLink() {
+    public RegistrationPage checkPrivacyPolicyLink(String policyLinkTitle, String policyLink) {
         privacyPolicyLink
                 .shouldBe(visible)
-                .shouldHave(text(POLICY_LINK_TITLE))
-                .shouldHave(attribute("href", PRIVACY_POLICY_LINK));
+                .shouldHave(text(policyLinkTitle))
+                .shouldHave(attribute("href", policyLink));
 
         return this;
     }
 
     @Step("Проверка заголовка страницы регистрации")
-    public RegistrationPage checkRegistrationPageHeader() {
+    public RegistrationPage checkRegistrationPageHeader(String value) {
         registrationPageHeader
-                .shouldHave(text(REGISTRATION_PAGE_HEADER));
+                .shouldHave(text(value));
 
         return this;
     }
