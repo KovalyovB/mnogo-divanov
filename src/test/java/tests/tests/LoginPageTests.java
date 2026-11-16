@@ -21,7 +21,6 @@ public class LoginPageTests extends TestBase {
                 .checkLoginPageTitle(LOGIN_PAGE_TITLE)
                 .checkAuthUserFormLoaded()
                 .checkCreateUserFormLoaded();
-
     }
 
     @Test
@@ -33,7 +32,7 @@ public class LoginPageTests extends TestBase {
                 .checkUserAuthPasswordTitle(AUTH_PASSWORD_TITLE)
                 .checkUserAuthPasswordInput(AUTH_PASSWORD_TITLE)
                 .checkUserAuthButton(AUTH_BUTTON_TITLE)
-                .checkCaptureForNewUser(NEW_USER_CAPTURE_MESSAGE);
+                .checkNewUserCaptureMessage(NEW_USER_CAPTURE_MESSAGE);
     }
 
     @Test
@@ -57,7 +56,8 @@ public class LoginPageTests extends TestBase {
                 .typeUserEmail(userEmail)
                 .typeUserPassword(userPassword)
                 .submitAuthorization()
-                .checkSuccessfulUserAuthorization(MY_ACCOUNT_LINK, SUCCESSFUL_AUTH_TITLE);
+                .isAccountPageOpenedAfterLogin(SUCCESSFUL_AUTH_TITLE)
+                .checkUserAuthorizationTitle(SUCCESSFUL_AUTH_TITLE);
     }
 
     @Test
@@ -68,7 +68,8 @@ public class LoginPageTests extends TestBase {
                 .typeUserEmail(wrongUserEmail)
                 .typeUserPassword(wrongUserPassword)
                 .submitAuthorization()
-                .checkWrongUserAuthorization(LOGIN_PAGE_LINK, WRONG_AUTHORIZATION_MESSAGE, ANOTHER_WRONG_AUTHORIZATION_MESSAGE);
-
+                .isNotRedirectedAfterFailedLogin(LOGIN_PAGE_LINK)
+                .checkWrongUserAuthorizationMessage
+                        (WRONG_AUTHORIZATION_MESSAGE, ANOTHER_WRONG_AUTHORIZATION_MESSAGE);
     }
 }

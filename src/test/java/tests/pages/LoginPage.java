@@ -115,25 +115,38 @@ public class LoginPage {
     }
 
     @Step("Проверка кнопки авторизации")
-    public LoginPage checkCaptureForNewUser(String value) {
+    public LoginPage checkNewUserCaptureMessage(String value) {
         newUserCaptureMessage.shouldBe(visible)
                 .shouldHave(text(value));
 
         return this;
     }
 
-    @Step("Проверка успешности авторизации")
-    public LoginPage checkSuccessfulUserAuthorization(String accountLink, String authTitle) {
+    @Step("Проверка перехода на страницу аккаунта после успешной авторизации")
+    public LoginPage isAccountPageOpenedAfterLogin(String accountLink) {
         webdriver().shouldHave(WebDriverConditions.url(accountLink));
+
+        return this;
+    }
+
+
+    @Step("Проверка заголовка в личном кабинетие после авторизации")
+    public LoginPage checkUserAuthorizationTitle(String authTitle) {
 
         afterAuthorizationAccountTitle.shouldHave(text(authTitle));
 
         return this;
     }
 
-    @Step("Проверка ошибки при авторизации с не валидными данынми")
-    public LoginPage checkWrongUserAuthorization(String pageLink, String wrongAuthMessage, String wrongAuth2Message) {
+    @Step("Проверка отсутствия перехода в аккаунт при ошибке авторизации")
+    public LoginPage isNotRedirectedAfterFailedLogin(String pageLink) {
         webdriver().shouldHave(WebDriverConditions.url(pageLink));
+
+        return this;
+    }
+
+    @Step("Проверка вывода ошибки на форме авторизации")
+    public LoginPage checkWrongUserAuthorizationMessage(String wrongAuthMessage, String wrongAuth2Message) {
 
         wrongAuthorizationAller.shouldBe(visible)
                 .shouldHave(anyOf(
