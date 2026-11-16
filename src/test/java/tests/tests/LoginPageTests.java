@@ -56,7 +56,7 @@ public class LoginPageTests extends TestBase {
                 .typeUserEmail(userEmail)
                 .typeUserPassword(userPassword)
                 .submitAuthorization()
-                .isAccountPageOpenedAfterLogin(SUCCESSFUL_AUTH_TITLE)
+                .isAccountPageOpenedAfterLogin(MY_ACCOUNT_LINK)
                 .checkUserAuthorizationTitle(SUCCESSFUL_AUTH_TITLE);
     }
 
